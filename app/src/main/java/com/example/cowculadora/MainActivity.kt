@@ -27,7 +27,10 @@ class MainActivity : AppCompatActivity() {
     public fun setValue(paramValue: Int) {
         if (estaUsandoAux) {
             valorAux = paramValue;
+            textView.text = paramValue.toString();
+            return;
         }
+        textView.text = paramValue.toString();
         valor = paramValue;
     }
 
@@ -55,6 +58,10 @@ class MainActivity : AppCompatActivity() {
 
     public fun onClickDel(view: View) {
         val valorString = getStringValue();
+        if(valorString.length <= 1) {
+            setValue(0);
+            return;
+        }
         setStringValue(valorString.dropLast(1));
     }
 
