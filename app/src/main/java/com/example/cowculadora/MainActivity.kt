@@ -36,6 +36,15 @@ class MainActivity : AppCompatActivity() {
         return valor;
     }
 
+    public fun getStringValue(): String {
+        val value = getValue()
+        return value.toString();
+    }
+
+    public fun setStringValue(paramValue: String) {
+        setValue(paramValue.toInt());
+    }
+
     public fun onClickClear(view: View) {
         valor = 0;
         valorAux = 0;
@@ -44,10 +53,49 @@ class MainActivity : AppCompatActivity() {
         operacao = null;
     }
 
-    public fun onClickDel() {
-        valor = 777;
-        val valorString = valor.toString();
-        val valorNovo = valorString.dropLast(1).toInt();
-        setValue(valorNovo);
+    public fun onClickDel(view: View) {
+        val valorString = getStringValue();
+        setStringValue(valorString.dropLast(1));
+    }
+
+    public fun onClickUm(view: View) {
+        val valorString = getStringValue();
+        setStringValue(valorString + '1')
+    }
+    public fun onClickDois(view: View) {
+        val valorString = getStringValue();
+        setStringValue(valorString + '2')
+    }
+    public fun onClickTres(view: View) {
+        val valorString = getStringValue();
+        setStringValue(valorString + '3')
+    }
+    public fun onClickQuatro(view: View) {
+        val valorString = getStringValue();
+        setStringValue(valorString + '4')
+    }
+    public fun onClickCinco(view: View) {
+        val valorString = getStringValue();
+        setStringValue(valorString + '5')
+    }
+    public fun onClickSeis(view: View) {
+        val valorString = getStringValue();
+        setStringValue(valorString + '6')
+    }
+    public fun onClickSete(view: View) {
+        val valorString = getStringValue();
+        setStringValue(valorString + '7')
+    }
+    public fun onClickOito(view: View) {
+        val valorString = getStringValue();
+        setStringValue(valorString + '8')
+    }
+    public fun onClickNove(view: View) {
+        val valorString = getStringValue();
+        setStringValue(valorString + '9')
+    }
+    public fun onClickZero(view: View) {
+        val valorString = getStringValue();
+        setStringValue(valorString + '0')
     }
 }

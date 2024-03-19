@@ -54,18 +54,21 @@
                 android:id="@+id/sete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickSete"
                 android:text="7" />
 
             <Button
                 android:id="@+id/oito"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickOito"
                 android:text="8" />
 
             <Button
                 android:id="@+id/nove"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickNove"
                 android:text="9" />
 
             <Button
@@ -83,18 +86,21 @@
                 android:id="@+id/quatro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickQuatro"
                 android:text="4" />
 
             <Button
                 android:id="@+id/cinco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickCinco"
                 android:text="5" />
 
             <Button
                 android:id="@+id/seis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickSeis"
                 android:text="6" />
 
             <Button
@@ -112,18 +118,21 @@
                 android:id="@+id/um"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickUm"
                 android:text="1" />
 
             <Button
                 android:id="@+id/dois"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickDois"
                 android:text="2" />
 
             <Button
                 android:id="@+id/tres"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickTres"
                 android:text="3" />
 
             <Button
@@ -148,6 +157,7 @@
                 android:id="@+id/zero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickZero"
                 android:text="0" />
 
             <Button
