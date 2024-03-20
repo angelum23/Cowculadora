@@ -42,6 +42,7 @@
                 android:id="@+id/dividir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickDividir"
                 android:text="/" />
 
         </TableRow>
@@ -75,6 +76,7 @@
                 android:id="@+id/multiplicar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickMultiplicar"
                 android:text="X" />
         </TableRow>
 
@@ -107,6 +109,7 @@
                 android:id="@+id/menos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickMenos"
                 android:text="-" />
         </TableRow>
 
@@ -139,6 +142,7 @@
                 android:id="@+id/mais"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickMais"
                 android:text="+" />
 
         </TableRow>
@@ -170,6 +174,7 @@
                 android:id="@+id/igual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onClickIgual"
                 android:text="=" />
 
         </TableRow>

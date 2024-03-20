@@ -40,21 +40,75 @@ class MainActivity : AppCompatActivity() {
         return valor;
     }
 
-    public fun getStringValue(): String {
+    fun getStringValue(): String {
         val value = getValue()
         return value.toString();
     }
 
-    public fun setStringValue(paramValue: String) {
+    fun setStringValue(paramValue: String) {
         setValue(paramValue.toInt());
     }
 
-    public fun onClickClear(view: View) {
+    fun usarValorAux() {
+        estaUsandoAux = true;
+        textView.text = valorAux.toString();
+    }
+
+    fun usarValorPrincipal() {
+        val resultado = retornaResultado()
+        estaUsandoAux = false;
+        operacao = null;
+        valor = resultado;
+        valorAux = 0;
+        textView.text = resultado.toString();
+    }
+
+    fun retornaResultado(): Int {
+        if (operacao === Operacao.mais) {
+            return valor + valorAux;
+        }
+        if (operacao === Operacao.menos) {
+            return valor - valorAux;
+        }
+        if (operacao === Operacao.multiplicar) {
+            return valor * valorAux;
+        }
+        if (operacao === Operacao.dividir) {
+            if (valorAux == 0) {
+                onClear();
+                return 0;
+            }
+            return valor / valorAux;
+        }
+
+        return valor;
+    }
+
+    fun definirOperacao(paramOperacao: Operacao) {
+        if (operacao != null) {
+            if(valorAux == 0) {
+                operacao = paramOperacao;
+                return;
+            }
+
+            usarValorPrincipal();
+            return;
+        }
+
+        operacao = paramOperacao;
+        usarValorAux();
+    }
+
+    fun onClear() {
         valor = 0;
         valorAux = 0;
         textView.text = valor.toString();
         estaUsandoAux = false;
         operacao = null;
+    }
+
+    public fun onClickClear(view: View) {
+        onClear();
     }
 
     public fun onClickDel(view: View) {
@@ -64,6 +118,23 @@ class MainActivity : AppCompatActivity() {
             return;
         }
         setStringValue(valorString.dropLast(1));
+    }
+
+    public fun onClickMais(view: View) {
+        definirOperacao(Operacao.mais);
+    }
+    public fun onClickMenos(view: View) {
+        definirOperacao(Operacao.menos);
+    }
+    public fun onClickMultiplicar(view: View) {
+        definirOperacao(Operacao.multiplicar);
+    }
+    public fun onClickDividir(view: View) {
+        definirOperacao(Operacao.dividir);
+    }
+
+    public fun onClickIgual(view: View) {
+        usarValorPrincipal();
     }
 
     public fun onClickNumber(view: View) {
